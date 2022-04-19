@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Window Object</h1>
+<h2>The prompt() Method</h2>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="calculate()">Try it</button>
+
+<p id="demo"></p>
+</body>
+<script>
+function calculate(){
+    //gather prompt from user
+    let math = prompt("Add (+) Subtract (-) Multiply(*) or Divide(/) two numbers using this prompt", "2+2");
+    //let math2 = prompt(`Add (+) Subtract (-) Multiply(*) or Divide(/) two numbers using this prompt`());
+    //determine whether add/sub/etc by checking in prompt contains operator with sequence of if statements
+    if (math.includes("+")){
+        console.log("adding!");
+        let equation = math.split("+");
+        let num1 = Number(equation[0]);
+        let num2 = Number(equation[1]);
+        document.getElementById("demo").innerHTML = add(num1, num2);
+        
+    } else if (math.contains("-")){
+        let equation = math.split("-");
+        let num1 = number(equation[0]);
+        let num2 = number(equation[1]);
+        document.getElementById("demo").innerHTML =
+        subtract(num1, num2);
+
+    } else if (math.contains("*")){
+        let equation = math.split("*");
+        let num1 = number(equation[0]);
+        let num2 = number(equation[1]);
+        document.getElementById("demo").innerHTML =
+        multiply(num1, num2);
+
+    } else if (math.contains("/")){
+        let equation = math.split("/");
+        let num1 = number(equation[0]);
+        let num2 = number(equation[1]);
+        document.getElementById("demo").innerHTML =
+        divide(num1, num2);
+
+        //inside each if statement call correlating math function from hard level problem
+    
+    }
+}</script>
+<script src = "sample.js"></script>
+</html>
